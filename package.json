@@ -1,0 +1,12 @@
+{
+  "name": "koa-sequelize-ts-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jordan Rodrigues <rrodrigues.jordan@gmail.com> (https://github.com/rrodriguesjordan)",
+  "license": "MIT"
+}
