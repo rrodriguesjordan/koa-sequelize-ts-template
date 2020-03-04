@@ -1,4 +1,8 @@
 {
-  "*.js": ["eslint --fix"],
-  "*.ts": ["eslint --fix", "npm run coverage --bail --findRelatedTests"]
+  "*.js": ["prettier --write", "eslint --fix"],
+  "*.ts": [
+    "prettier --write",
+    "eslint --fix",
+    "npm run coverage --bail --findRelatedTests"
+  ]
 }
