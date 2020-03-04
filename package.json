@@ -1,12 +1,62 @@
 {
   "name": "koa-sequelize-ts-template",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "version": "1.0.0-alpha",
+  "description": "An API template for Node projects with Koa, Sequelize and Typescript.",
   "author": "Jordan Rodrigues <rrodrigues.jordan@gmail.com> (https://github.com/rrodriguesjordan)",
-  "license": "MIT"
+  "contributors": [],
+  "homepage": "https://github.com/Jordan2R/gocd-test#readme",
+  "keywords": [
+    "template",
+    "node",
+    "koa",
+    "sequelize",
+    "typescript"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "start": "node dist/index.js",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "build-start": "npm run build && npm run start",
+    "test": "jest",
+    "coverage": "jest --colors --coverage"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@types/jest": "25.1.3",
+    "@types/koa": "2.11.2",
+    "@typescript-eslint/eslint-plugin": "2.22.0",
+    "@typescript-eslint/parser": "2.22.0",
+    "commitizen": "4.0.3",
+    "cross-env": "7.0.1",
+    "cz-conventional-changelog": "3.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "6.10.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jest": "23.8.1",
+    "eslint-plugin-prettier": "3.1.2",
+    "husky": "4.2.3",
+    "jest": "25.1.0",
+    "lint-staged": "10.0.8",
+    "nodemon": "2.0.2",
+    "prettier": "1.19.1",
+    "sucrase": "3.12.1",
+    "ts-jest": "25.2.1",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "koa": "2.11.0"
+  }
 }
