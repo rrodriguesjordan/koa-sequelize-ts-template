@@ -1,6 +1,6 @@
-# Koa Sequelize Typescript Template
+# Typescript Koa TypeORM Template
 
-> An API template for Node projects with Koa, Sequelize and Typescript.
+> A Typescript API template for Node projects with Koa and TypeORM.
 
 ## Author
 
