@@ -1,8 +1,8 @@
 {
-  "*.js": ["prettier --write", "eslint --fix"],
-  "*.ts": [
-    "prettier --write",
-    "eslint --fix",
+  "{src,__tests__}/**/*.{js,ts}": ["prettier --write", "eslint --fix"],
+  "{src,__tests__}/**/*.{spec,test}.{js,ts}}": [
+    "pretter --write",
+    "eslint -- fix",
     "npm run coverage --bail --findRelatedTests"
   ]
 }
