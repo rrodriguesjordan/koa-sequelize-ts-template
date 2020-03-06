@@ -1,12 +1,19 @@
-import Koa from 'koa';
-import http from 'http';
-import Config from './config/config';
+import http, { Server } from 'http';
+import server from './server';
+import config from './config';
 
-const server = new Koa();
-const port = process.env.PORT || 7373;
+async function serverBootstrap(): Promise<Server> {
+  return http.createServer(server.callback()).listen(config.port);
+}
 
-server.use(ctx => {
-  ctx.body = Config;
-});
-
-http.createServer(server.callback()).listen(port);
+serverBootstrap()
+  .then(httpServer => {
+    console.log(`Server listening on address ${httpServer.address()}!`);
+  })
+  .catch(err => {
+    setImmediate(() => {
+      console.error('Unable to run the server because of the following error:');
+      console.error(err);
+      process.exit();
+    });
+  });

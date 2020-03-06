@@ -14,6 +14,10 @@ class Config {
 
   readonly jwtSecret: string;
 
+  readonly isTest: boolean;
+
+  readonly isDevelopment: boolean;
+
   constructor() {
     const envSchema = Joi.object({
       NODE_ENV: Joi.string().allow('development', 'production', 'test'),
@@ -34,6 +38,8 @@ class Config {
     this.env = envVars.NODE_ENV;
     this.port = envVars.PORT;
     this.jwtSecret = envVars.JWT_SECRET;
+    this.isTest = this.env === 'test';
+    this.isDevelopment = this.env === 'development';
   }
 }
 

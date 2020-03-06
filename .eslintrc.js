@@ -24,6 +24,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier', 'import'],
   rules: {
+    'no-console': 'off',
     'prettier/prettier': 'error',
     'import/no-dynamic-require': 'off',
     'import/prefer-default-export': 'off',
