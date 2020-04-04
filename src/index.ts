@@ -1,14 +1,14 @@
 import http, { Server } from 'http';
-import server from './server';
+import app from './app';
 import config from './config';
 
 async function serverBootstrap(): Promise<Server> {
-  return http.createServer(server.callback()).listen(config.port);
+  return http.createServer(app.callback()).listen(config.port);
 }
 
 serverBootstrap()
-  .then(httpServer => {
-    console.log(`Server listening on address ${httpServer.address()}!`);
+  .then(() => {
+    console.log(`Server listening on port ${config.port}!`);
   })
   .catch(err => {
     setImmediate(() => {

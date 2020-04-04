@@ -7,7 +7,7 @@ export default async (ctx: Context, next: Next): Promise<void> => {
     ctx.status = err.status || 500;
 
     if (ctx.status >= 500) {
-      err.message = 'Erro interno do servidor';
+      err.message = 'Server internal error';
       console.error(`${err.message}: `, err);
     }
 

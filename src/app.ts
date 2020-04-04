@@ -10,22 +10,22 @@ import errorHandler from './middlewares/errorMiddleware';
 const helmet = koaHelmet();
 const bodyparser = koaBodyparser({
   onerror: (err, ctx) => {
-    console.error(`Erro no bodyparser: ${bodyparser}`);
-    ctx.throw(400, 'Requisição com sintaxe inválida');
+    console.error(`Bodyparser error: ${err}`);
+    ctx.throw(400, 'Request with invalid syntax');
   }
 });
 
-const server = new Koa();
+const app = new Koa();
 
-if (config.isDevelopment) server.use(koaLogger());
+if (config.isDevelopment) app.use(koaLogger());
 
-server
+app
   .use(errorHandler)
   .use(helmet)
   .use(bodyparser)
   .use(router.routes())
   .use(router.allowedMethods());
 
-server.use(async ctx => ctx.throw(404, 'Página não encontrada'));
+app.use(async ctx => ctx.throw(404, 'Page not found'));
 
-export default server;
+export default app;
