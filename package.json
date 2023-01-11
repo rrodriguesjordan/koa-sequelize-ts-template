@@ -79,7 +79,7 @@
     "koa-helmet": "5.2.0",
     "koa-logger": "3.2.1",
     "koa-router": "8.0.8",
-    "mikro-orm": "3.3.6",
+    "mikro-orm": "5.6.6",
     "pg": "7.18.2"
   }
 }
